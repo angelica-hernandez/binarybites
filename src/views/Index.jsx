@@ -61,91 +61,13 @@ class Index extends React.Component {
         <Header />
         {/* Page content */}
         <Container className="mt--7" fluid>
-          <Row>
-            <Col className="mb-5 mb-xl-0" xl="8">
-              <Card className="bg-gradient-default shadow">
-                <CardHeader className="bg-transparent">
-                  <Row className="align-items-center">
-                    <div className="col">
-                      <h6 className="text-uppercase text-light ls-1 mb-1">
-                        Overview
-                      </h6>
-                      <h2 className="text-white mb-0">Sales value</h2>
-                    </div>
-                    <div className="col">
-                      <Nav className="justify-content-end" pills>
-                        <NavItem>
-                          <NavLink
-                            className={classnames("py-2 px-3", {
-                              active: this.state.activeNav === 1
-                            })}
-                            href="#pablo"
-                            onClick={e => this.toggleNavs(e, 1)}
-                          >
-                            <span className="d-none d-md-block">Month</span>
-                            <span className="d-md-none">M</span>
-                          </NavLink>
-                        </NavItem>
-                        <NavItem>
-                          <NavLink
-                            className={classnames("py-2 px-3", {
-                              active: this.state.activeNav === 2
-                            })}
-                            data-toggle="tab"
-                            href="#pablo"
-                            onClick={e => this.toggleNavs(e, 2)}
-                          >
-                            <span className="d-none d-md-block">Week</span>
-                            <span className="d-md-none">W</span>
-                          </NavLink>
-                        </NavItem>
-                      </Nav>
-                    </div>
-                  </Row>
-                </CardHeader>
-                <CardBody>
-                  {/* Chart */}
-                  <div className="chart">
-                    <Line
-                      data={chartExample1[this.state.chartExample1Data]}
-                      options={chartExample1.options}
-                      getDatasetAtEvent={e => console.log(e)}
-                    />
-                  </div>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col xl="4">
-              <Card className="shadow">
-                <CardHeader className="bg-transparent">
-                  <Row className="align-items-center">
-                    <div className="col">
-                      <h6 className="text-uppercase text-muted ls-1 mb-1">
-                        Performance
-                      </h6>
-                      <h2 className="mb-0">Total orders</h2>
-                    </div>
-                  </Row>
-                </CardHeader>
-                <CardBody>
-                  {/* Chart */}
-                  <div className="chart">
-                    <Bar
-                      data={chartExample2.data}
-                      options={chartExample2.options}
-                    />
-                  </div>
-                </CardBody>
-              </Card>
-            </Col>
-          </Row>
           <Row className="mt-5">
             <Col className="mb-5 mb-xl-0" xl="8">
               <Card className="shadow">
                 <CardHeader className="border-0">
                   <Row className="align-items-center">
                     <div className="col">
-                      <h3 className="mb-0">Page visits</h3>
+                      <h3 className="mb-0">Restaurant #1</h3>
                     </div>
                     <div className="col text-right">
                       <Button
@@ -223,14 +145,14 @@ class Index extends React.Component {
                 <CardHeader className="border-0">
                   <Row className="align-items-center">
                     <div className="col">
-                      <h3 className="mb-0">Social traffic</h3>
+                      <h3 className="mb-0">Restaurant #2</h3>
                     </div>
                     <div className="col text-right">
                       <Button
                         color="primary"
                         href="#pablo"
                         onClick={e => e.preventDefault()}
-                        size="sm"
+                        size="sm" 
                       >
                         See all
                       </Button>
@@ -256,7 +178,7 @@ class Index extends React.Component {
                             <Progress
                               max="100"
                               value="60"
-                              barClassName="bg-gradient-danger"
+                              barClassName="bg-dark-danger"
                             />
                           </div>
                         </div>
@@ -272,7 +194,7 @@ class Index extends React.Component {
                             <Progress
                               max="100"
                               value="70"
-                              barClassName="bg-gradient-success"
+                              barClassName="bg-dark-success"
                             />
                           </div>
                         </div>
@@ -300,7 +222,7 @@ class Index extends React.Component {
                             <Progress
                               max="100"
                               value="75"
-                              barClassName="bg-gradient-info"
+                              barClassName="bg-dark-info"
                             />
                           </div>
                         </div>
@@ -316,7 +238,7 @@ class Index extends React.Component {
                             <Progress
                               max="100"
                               value="30"
-                              barClassName="bg-gradient-warning"
+                              barClassName="bg-dark-warning"
                             />
                           </div>
                         </div>
