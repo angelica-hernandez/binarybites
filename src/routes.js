@@ -10,7 +10,7 @@ var routes = [
   {
     path: "/index",
     name: "Order",
-    icon: "ni ni-tv-2 text-primary",
+    icon: "ni ni-tv-2 text-blue",
     component: Index,
     layout: "/admin"
   },
@@ -48,14 +48,13 @@ var routes = [
     icon: "ni ni-key-25 text-info",
     component: Login,
     layout: "/auth"
+  },
+  {
+    path: "/register",
+    name: "Register",
+    icon: "ni ni-circle-08 text-pink",
+    component: Register,
+    layout: "/auth"
   }
-  // },
-  // {
-  //   path: "/register",
-  //   name: "Register",
-  //   icon: "ni ni-circle-08 text-pink",
-  //   component: Register,
-  //   layout: "/auth"
-  // }
 ];
 export default routes;
