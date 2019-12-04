@@ -10,41 +10,41 @@ var routes = [
   {
     path: "/index",
     name: "Order",
-    icon: "ni ni-tv-2 text-blue",
+    icon: "ni ni-tv-2 text-primary",
     component: Index,
-    layout: "/admin"
+    layout: "/ordinary"
   },
   {
     path: "/icons",
     name: "Previous Orders",
     icon: "ni ni-planet text-blue",
     component: Icons,
-    layout: "/admin"
+    layout: "/ordinary"
   },
   {
     path: "/delivery",
     name: "Delivery",
     icon: "ni ni-pin-3 text-orange",
     component: Delivery,
-    layout: "/admin"
+    layout: "/ordinary"
   },
   {
     path: "/user-profile",
     name: "Sales People",
     icon: "ni ni-single-02 text-yellow",
     component: Profile,
-    layout: "/admin"
+    layout: "/ordinary"
   },
   {
     path: "/tables",
     name: "Ratings",
     icon: "ni ni-bullet-list-67 text-red",
     component: Tables,
-    layout: "/admin"
+    layout: "/ordinary"
   },
   {
     path: "/login",
-    name: "Managerial",
+    name: "Login",
     icon: "ni ni-key-25 text-info",
     component: Login,
     layout: "/auth"

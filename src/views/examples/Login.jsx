@@ -54,7 +54,7 @@ const Login = (props) => {
                 </FormGroup>
                 <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                   <DropdownToggle caret>
-                    Dropdown
+                    Select
                     </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>Customer</DropdownItem>
