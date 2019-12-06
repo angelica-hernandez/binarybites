@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 // reactstrap components
 import {
@@ -13,25 +15,59 @@ import {
   InputGroup,
   Row,
   Col,
-  Dropdown, 
-  DropdownToggle, 
-  DropdownMenu, 
-  DropdownItem
 } from "reactstrap";
 
-const Login = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+class Login extends React.Component {
 
-  const toggle = () => setDropdownOpen(prevState => !prevState);
+// constructor(props) {
+//   super(props);
+//   this.toggle = this.toggle.bind(this);
+//   this.changeValue = this.changeValue.bind(this);
+//   this.state = {
+//       dropDownValue: 'Select',
+//       dropdownOpen: false
+//   };
+// }
+// toggle(event) {
+
+//   this.setState({
+//       dropdownOpen: !this.state.dropdownOpen
+//   });
+// }
+constructor(props) {
+  super(props);
+  this.state = {value: 'http://localhost:3000/guest/order'};
+
+  this.handleChange = this.handleChange.bind(this);
+  this.handleSubmit = this.handleSubmit.bind(this);
+}
+submit = document.getElementById("submit");
+menu = document.getElementById("menu");
+
+handleChange(event) {
+  this.setState({value: event.target.value});
+}
+
+handleSubmit(event) {
+  console.log("yes");
+  window.location = this.state.value;
+  // window.location = this.menu.value;
+  event.preventDefault();
+  console.log("hellyeah");
+}
+
+render(){
     return (
       <>
+      <br></br>
+      <br></br>
         <Col lg="5" md="7">
           <Card className="bg-secondary shadow border-0">
             <CardBody className="px-lg-5 py-lg-5">
               <div className="text-center text-muted mb-4">
                 <small>Sign in with credentials</small>
               </div>
-              <Form role="form">
+              <Form role="form" onSubmit={this.handleSubmit}>
                 <FormGroup className="mb-3">
                   <InputGroup className="input-group-alternative">
                     <InputGroupAddon addonType="prepend">
@@ -52,24 +88,33 @@ const Login = (props) => {
                     <Input placeholder="Password" type="password" />
                   </InputGroup>
                 </FormGroup>
-                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                {/* <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                   <DropdownToggle caret>
-                    Select
+                  {this.state.dropDownValue}
                     </DropdownToggle>
                   <DropdownMenu>
                     <DropdownItem>Customer</DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>Manager</DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem>Sales Person</DropdownItem>
+                    <DropdownItem>cook Person</DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>Cooks</DropdownItem>
                     <DropdownItem divider />
                     <DropdownItem>Delivery Person</DropdownItem>
                   </DropdownMenu>
-                </Dropdown>
+                </Dropdown> */}
+                  <select id="menu" value={this.state.value} onChange={this.handleChange}>
+                  <option value="http://localhost:3000/guest/order">Please select one</option>
+                  <option value="http://localhost:3000/ordinary/order">Regular Customer</option>
+                  <option value="http://localhost:3000/VIP/order">VIP Customer</option>
+                  <option value="http://localhost:3000/manager/icons">Manager</option>
+                  <option value="http://localhost:3000/sales/order">Sales Person</option>
+                  <option value="http://localhost:3000/cook/order">Cooks</option>
+                  <option value="http://localhost:3000/delivery/order">Delivery Person</option>
+                  </select>
                 <div className="text-center">
-                  <Button className="my-4" color="primary" type="button">
+                  <Button className="my-4" color="primary" type="submit" id="submit" value="submit">
                     Sign in
                   </Button>
                 </div>
@@ -91,5 +136,5 @@ const Login = (props) => {
       </>
     );
   }
-
+}
 export default Login;

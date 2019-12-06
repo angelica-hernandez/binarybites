@@ -146,7 +146,7 @@ class Profile extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              defaultValue="lucky.jesse"
+                              defaultValue="lucky.ang"
                               id="input-username"
                               placeholder="Username"
                               type="text"
@@ -164,7 +164,7 @@ class Profile extends React.Component {
                             <Input
                               className="form-control-alternative"
                               id="input-email"
-                              placeholder="jesse@example.com"
+                              placeholder="ang@example.com"
                               type="email"
                             />
                           </FormGroup>
@@ -198,7 +198,7 @@ class Profile extends React.Component {
                             </label>
                             <Input
                               className="form-control-alternative"
-                              defaultValue="Jesse"
+                              defaultValue="ang"
                               id="input-last-name"
                               placeholder="Last name"
                               type="text"
